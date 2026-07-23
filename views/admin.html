@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogverse Admin Panel</title>
+
+    <link rel="stylesheet" href="/css/admin.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <h2>BlogVerse</h2>
+
+        <ul>
+
+            <li class="active" onclick="showSection('dashboard', this)">
+                <i class="fa-solid fa-chart-line"></i>
+                Dashboard
+            </li>
+
+            <li onclick="showSection('blogs', this)">
+                <i class="fa-solid fa-newspaper"></i>
+                Manage Blogs
+            </li>
+
+            <li onclick="showSection('categories', this)">
+                <i class="fa-solid fa-folder"></i>
+                Categories
+            </li>
+
+            <li onclick="showSection('comments', this)">
+                <i class="fa-solid fa-comments"></i>
+                Comments
+            </li>
+
+            <li onclick="showSection('analytics', this)">
+                <i class="fa-solid fa-chart-simple"></i>
+                Analytics
+            </li>
+
+            <li onclick="logout()">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+    <!-- Main Content -->
+
+    <main class="content">
+
+
+        <!-- Dashboard -->
+
+        <section id="dashboard" class="section">
+
+            <h1>Dashboard</h1>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Total Blogs</h3>
+                    <p id="totalBlogs">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Categories</h3>
+                    <p id="totalCategories">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Comments</h3>
+                    <p id="totalComments">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Likes</h3>
+                    <p id="totalLikes">0</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Blogs -->
+
+        <section id="blogs" class="section hidden">
+
+            <h1>Manage Blogs</h1>
+            
+
+            <form id="blogForm">
+                <input type="hidden" id="blogId">
+
+                <input
+                    type="text"
+                    id="title"
+                    placeholder="Blog Title"
+                    required>
+
+               <select id="category" required>
+
+    <option value="1">Technology</option>
+    <option value="2">Artificial Intelligence</option>
+    <option value="3">Programming</option>
+    <option value="4">Sports</option>
+    <option value="5">Gaming</option>
+
+</select>
+
+                <textarea
+                    id="content"
+                    placeholder="Write blog here..."
+                    rows="8">
+                </textarea>
+
+                <button type="submit" id="publishBtn">
+                     Publish Blog
+                </button>
+            </form>
+
+            <br>
+
+            <table>
+
+                <thead>
+
+                <tr>
+
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Actions</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody id="blogTable">
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+
+
+
+        <!-- Categories -->
+
+       
+
+<section id="categories" class="section hidden">
+
+    <h1>Categories</h1>
+
+    <form id="categoryForm">
+
+    <input type="hidden" id="categoryId">
+
+    <input
+        type="text"
+        id="categoryName"
+        placeholder="Category Name"
+        required>
+
+    <button type="submit" id="categoryBtn">
+        Add Category
+    </button>
+
+</form>
+
+    <br>
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>ID</th>
+                <th>Category</th>
+                <th>Actions</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="categoryTable">
+
+        </tbody>
+
+    </table>
+
+</section>
+
+
+
+        <!-- Comments -->
+
+        <section id="comments" class="section hidden">
+
+            <h1>Comments</h1>
+
+            <table>
+
+                <thead>
+
+                <tr>
+
+                    <th>Name</th>
+                    <th>Comment</th>
+                    <th>Delete</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody id="commentTable">
+
+                </tbody>
+
+            </table>
+
+        </section>
+            <!-- Analytics -->
+
+            <section id="analytics" class="section hidden">
+
+                <h1>Analytics Dashboard</h1>
+
+    <!-- Statistics Cards -->
+
+    <div class="analytics-cards">
+
+        <div class="card">
+            <h3>Total Blogs</h3>
+            <h2 id="totalBlogs">--</h2>
+        </div>
+
+        <div class="card">
+            <h3>Total Categories</h3>
+            <h2 id="totalCategories">--</h2>
+        </div>
+
+        <div class="card">
+            <h3>Total Views</h3>
+            <h2 id="totalViews">--</h2>
+        </div>
+
+        <div class="card">
+            <h3>Total Comments</h3>
+            <h2 id="totalComments">--</h2>
+        </div>
+
+        <div class="card">
+            <h3>Total Likes</h3>
+            <h2 id="totalLikes">--</h2>
+        </div>
+
+        <div class="card">
+            <h3>Total Dislikes</h3>
+            <h2 id="totalDislikes">--</h2>
+        </div>
+
+    </div>
+
+    <!-- Charts -->
+
+    <div class="chart-container">
+
+        <div class="chart-box">
+
+            <h2>Blogs by Category</h2>
+
+            <canvas id="categoryChart"></canvas>
+
+        </div>
+
+        <div class="chart-box">
+
+            <h2>Category Distribution</h2>
+
+            <canvas id="pieChart"></canvas>
+
+        </div>
+
+    </div>
+
+    <!-- Top Blogs -->
+
+    <div class="table-box">
+
+        <h2>Top 5 Most Viewed Blogs</h2>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Rank</th>
+                    <th>Blog Title</th>
+                    <th>Views</th>
+                    <th>Likes</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="topBlogsTable">
+
+                <!-- JavaScript + PostgreSQL will add rows here -->
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+    </main>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="/js/admin.js"></script>
+</body>
+</body>
+</html>

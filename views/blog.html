@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Blog</title>
+
+    <link rel="stylesheet" href="/css/blog.css">
+
+</head>
+
+<body>
+
+    <div class="blog-container">
+
+        <h1 id="title"></h1>
+
+        <p>
+
+            <b>Category:</b>
+
+            <span id="category"></span>
+
+        </p>
+
+        <p>
+
+            <b>Views:</b>
+
+            <span id="views"></span>
+
+        </p>
+
+        <hr><br>
+
+        <p id="content"></p>
+
+        <br><br>
+
+        <button id="likeBtn" onclick="likeBlog()">
+
+    👍 Like (<span id="likeCount">0</span>)
+
+</button>
+
+    </div>
+    <hr>
+
+<h2>Comments</h2>
+
+<form id="commentForm">
+
+    <textarea
+        id="comment"
+        placeholder="Write your comment..."
+        rows="5"
+        required
+    ></textarea>
+
+    <br><br>
+
+    <button type="submit">
+
+        Post Comment
+
+    </button>
+
+</form>
+
+<br>
+
+<div id="commentContainer">
+
+</div>
+
+    <script src="/js/blog.js"></script>
+
+</body>
+
+</html>

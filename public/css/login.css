@@ -1,0 +1,175 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+}
+
+body{
+    background:#f8fafc;
+    color:#1e293b;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+nav{
+    background:#0f172a;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 60px;
+    box-shadow:0 4px 15px rgba(0,0,0,.12);
+}
+
+.logo{
+    font-size:30px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-size:16px;
+    font-weight:500;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#60a5fa;
+}
+
+/* ===========================
+   LOGIN BOX
+=========================== */
+
+.login-container{
+    width:400px;
+    background:white;
+    margin:70px auto;
+    padding:35px;
+    border-radius:16px;
+    border:1px solid #e2e8f0;
+    box-shadow:0 12px 30px rgba(15,23,42,.08);
+    animation:fadeUp .5s ease;
+}
+
+.login-container h2{
+    text-align:center;
+    color:#0f172a;
+    margin-bottom:25px;
+}
+
+/* ===========================
+   FORM
+=========================== */
+
+label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:6px;
+    font-weight:600;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    border:1px solid #cbd5e1;
+    border-radius:8px;
+    outline:none;
+    transition:.3s;
+}
+
+input:focus{
+    border-color:#2563eb;
+    box-shadow:0 0 0 4px rgba(37,99,235,.15);
+}
+
+button{
+    width:100%;
+    padding:13px;
+    margin-top:22px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#1d4ed8;
+    transform:translateY(-2px);
+}
+
+p{
+    margin-top:20px;
+    text-align:center;
+    color:#64748b;
+}
+
+p a{
+    color:#2563eb;
+    text-decoration:none;
+    font-weight:600;
+}
+
+p a:hover{
+    text-decoration:underline;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+nav{
+    flex-direction:column;
+    gap:15px;
+    padding:20px;
+}
+
+nav ul{
+    gap:18px;
+}
+
+.login-container{
+    width:95%;
+    padding:25px;
+}
+
+}
+
+/* ===========================
+   ANIMATION
+=========================== */
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(15px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}

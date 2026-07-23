@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Blogverse</title>
+
+    <link rel="stylesheet" href="/css/index.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- ===========================
+         NAVBAR
+    ============================ -->
+
+    <nav>
+
+        <div class="logo">
+            BlogVerse
+        </div>
+
+        <ul>
+
+           <li id="welcomeUser" class="dropdown" style="display:none;">
+
+   <a href="#" id="welcomeText" onclick="toggleDropdown(event)"></a>
+    <ul class="dropdown-menu">
+
+        <li>
+            <a href="/admin">
+                <i class="fa-solid fa-table-columns"></i>
+                Dashboard
+            </a>
+        </li>
+
+        <li>
+            <a href="#" onclick="logout()">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </a>
+        </li>
+
+    </ul>
+
+</li>
+
+            <li>
+                <a href="#">Home</a>
+            </li>
+
+            <li>
+                <a href="#">Contact</a>
+            </li>
+
+            <li id="loginBtn">
+                <a href="/login">Login</a>
+            </li>
+
+            <li id="signupBtn">
+                <a href="/signup">Sign Up</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <!-- ===========================
+         MAIN LAYOUT
+    ============================ -->
+
+    <div class="layout">
+
+        <!-- ===========================
+             LEFT SIDEBAR
+        ============================ -->
+
+        <div class="sidebar">
+
+            <!-- Search -->
+
+            <div class="box">
+
+                <h3>Blog Search</h3>
+
+                <div class="search-box">
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search blogs...">
+
+                    <button>
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Categories -->
+
+            <div class="box">
+
+                <h3>Blog Categories</h3>
+
+                <ul id="categoryList">
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <!-- ===========================
+             RIGHT BLOG SECTION
+        ============================ -->
+
+        <div class="blogs">
+
+            <h2>Latest Blogs</h2>
+
+            <div id="blogContainer">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="/js/index.js"></script>
+
+</body>
+
+</html>

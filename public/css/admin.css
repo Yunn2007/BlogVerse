@@ -1,0 +1,398 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+}
+
+body{
+    background:#f8fafc;
+    color:#1e293b;
+}
+
+/* ===========================
+   MAIN LAYOUT
+=========================== */
+
+.container{
+    display:flex;
+    min-height:100vh;
+}
+
+/* ===========================
+   SIDEBAR
+=========================== */
+
+.sidebar{
+    width:260px;
+    background:#0f172a;
+    color:#fff;
+    padding:25px 18px;
+    box-shadow:4px 0 18px rgba(15,23,42,.12);
+}
+
+.sidebar h2{
+    text-align:center;
+    margin-bottom:35px;
+    font-size:28px;
+    font-weight:700;
+    letter-spacing:.5px;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar ul li{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:14px 16px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s ease;
+    font-size:16px;
+    font-weight:500;
+}
+
+.sidebar ul li:hover{
+    background:#1e3a8a;
+    transform:translateX(5px);
+}
+
+.sidebar ul li.active{
+    background:#2563eb;
+    box-shadow:0 8px 18px rgba(37,99,235,.35);
+}
+
+/* ===========================
+   CONTENT
+=========================== */
+
+.content{
+    flex:1;
+    padding:35px;
+}
+
+.content h1{
+    font-size:32px;
+    color:#0f172a;
+    margin-bottom:30px;
+}
+
+/* ===========================
+   DASHBOARD CARDS
+=========================== */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:22px;
+    margin-bottom:30px;
+}
+
+.card{
+    background:#fff;
+    padding:28px;
+    border-radius:14px;
+    border:1px solid #e2e8f0;
+    box-shadow:0 10px 24px rgba(15,23,42,.06);
+    text-align:center;
+    transition:.3s ease;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 14px 30px rgba(15,23,42,.12);
+}
+
+.card h3{
+    color:#64748b;
+    font-size:18px;
+    margin-bottom:15px;
+    font-weight:600;
+}
+
+.card p{
+    font-size:34px;
+    color:#2563eb;
+    font-weight:700;
+}
+
+/* ===========================
+   FORM
+=========================== */
+
+form{
+    background:#fff;
+    padding:25px;
+    border-radius:14px;
+    border:1px solid #e2e8f0;
+    box-shadow:0 10px 24px rgba(15,23,42,.06);
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:13px 15px;
+    margin:12px 0;
+    border:1px solid #cbd5e1;
+    border-radius:8px;
+    font-size:15px;
+    transition:.3s;
+    outline:none;
+    background:white;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:#2563eb;
+    box-shadow:0 0 0 4px rgba(37,99,235,.15);
+}
+
+textarea{
+    resize:vertical;
+    min-height:140px;
+}
+
+button{
+    background:#2563eb;
+    color:#fff;
+    border:none;
+    padding:12px 24px;
+    border-radius:8px;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#1d4ed8;
+    transform:translateY(-2px);
+}
+
+/* ===========================
+   TABLE
+=========================== */
+
+table{
+    width:100%;
+    margin-top:25px;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:14px;
+    overflow:hidden;
+    border:1px solid #e2e8f0;
+    box-shadow:0 10px 24px rgba(15,23,42,.06);
+}
+
+table th{
+    background:#2563eb;
+    color:#fff;
+    padding:16px;
+    font-size:15px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+}
+
+table td{
+    padding:16px;
+    text-align:center;
+    border-bottom:1px solid #e2e8f0;
+    color:#334155;
+}
+
+table tr:last-child td{
+    border-bottom:none;
+}
+
+table tbody tr{
+    transition:.3s;
+}
+
+table tbody tr:hover{
+    background:#eff6ff;
+}
+
+/* ===========================
+   CATEGORY PANEL
+=========================== */
+
+#categoryList{
+    background:#fff;
+    margin-top:20px;
+    padding:20px;
+    border-radius:14px;
+    border:1px solid #e2e8f0;
+    box-shadow:0 10px 24px rgba(15,23,42,.06);
+}
+
+#categoryList li{
+    list-style:none;
+    padding:12px 15px;
+    margin-bottom:10px;
+    border-radius:8px;
+    background:#f8fafc;
+    transition:.3s;
+    cursor:pointer;
+}
+
+#categoryList li:last-child{
+    margin-bottom:0;
+}
+
+#categoryList li:hover{
+    background:#dbeafe;
+    color:#2563eb;
+    transform:translateX(5px);
+}
+
+/* ===========================
+   CHART BOX
+=========================== */
+
+.chart-box{
+    margin-top:35px;
+    background:#fff;
+    padding:25px;
+    border-radius:14px;
+    border:1px solid #e2e8f0;
+    box-shadow:0 10px 24px rgba(15,23,42,.06);
+}
+
+.chart-box h2,
+.chart-box h3{
+    margin-bottom:20px;
+    color:#0f172a;
+}
+
+/* ===========================
+   HIDDEN
+=========================== */
+
+.hidden{
+    display:none;
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#e2e8f0;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#94a3b8;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#64748b;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:992px){
+
+.container{
+    flex-direction:column;
+}
+
+.sidebar{
+    width:100%;
+    padding:20px;
+}
+
+.sidebar h2{
+    margin-bottom:20px;
+}
+
+.sidebar ul{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.sidebar ul li{
+    margin:0;
+}
+
+.content{
+    padding:20px;
+}
+
+.cards{
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+}
+
+}
+
+@media(max-width:768px){
+
+.content h1{
+    font-size:26px;
+}
+
+.cards{
+    grid-template-columns:1fr;
+}
+
+table{
+    display:block;
+    overflow-x:auto;
+    white-space:nowrap;
+}
+
+button{
+    width:100%;
+}
+
+input,
+select,
+textarea{
+    font-size:14px;
+}
+
+}
+
+/* ===========================
+   SMOOTH ANIMATION
+=========================== */
+
+.card,
+form,
+table,
+.chart-box,
+#categoryList{
+    animation:fadeUp .5s ease;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
