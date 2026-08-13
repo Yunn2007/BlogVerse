@@ -336,6 +336,7 @@ async function loadCategories(){
         `;
 
     });
+    loadBlogCategories();
 
 }
 
@@ -368,6 +369,7 @@ async function deleteCategory(id){
     alert(await response.text());
 
     loadCategories();
+    
 
 }
 
@@ -547,3 +549,39 @@ async function loadAnalytics(){
 }
 
 loadAnalytics();
+// Load Categories in drop down
+async function loadBlogCategories() {
+
+    try {
+
+        const response = await fetch("/get-categories");
+
+        const categories = await response.json();
+
+        const categorySelect = document.getElementById("category");
+
+        categorySelect.innerHTML = `
+            <option value="">Select Category</option>
+        `;
+
+        categories.forEach(category => {
+
+            categorySelect.innerHTML += `
+                <option value="${category.category_id}">
+                    ${category.category_name}
+                </option>
+            `;
+
+        });
+
+    }
+
+    catch (error) {
+
+        console.log("Error loading categories:", error);
+
+    }
+
+}
+
+loadBlogCategories();
